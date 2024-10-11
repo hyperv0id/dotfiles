@@ -1,0 +1,22 @@
+export GO111MODULE=on
+export GOPROXY=https://goproxy.cn
+export GOPATH=$HOME/go
+
+alias yay=paru
+alias ls=lsd
+alias tree="lsd --tree"
+. "$HOME/.cargo/env"
+source "/home/jcheng/.cargo/env"
+export LOCAL_BIN="$HOME/.local/bin/"
+export CARGO_BIN="$HOME/.local/.cargo/bin/"
+export PATH="$PATH:$LOCAL_BIN"
+export PATH="$PATH:$CARGO_BIN"
+
+# fzf: fuzzy file finder
+export FZF_DEFAULT_OPTS="--height 80% --layout=reverse --border --preview '$HOME/.local/bin/fzf-scope.sh {} '"
+export FZF_DEFAULT_COMMAND="fd --exclude={.wine,.git,.idea,.vscode,.sass-cache,node_modules,build,.local,.games,.steam,.m2,.rangerdir,.ssh,.ghidra,.mozilla} --type f --hidden --follow"
+
+# node version manager
+function init_nvm(){
+    source /usr/share/nvm/init-nvm.sh
+}
